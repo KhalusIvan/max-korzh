@@ -1,0 +1,89 @@
+#remix_div{
+    padding-left: 14% ;
+}
+
+#remix_list {
+    position: relative;
+    left: 8.25%;
+    top: 18%;
+    display: inline-block;
+}
+
+.remix_li {
+    padding: 20px 0;
+    transition: all 1s;
+}
+
+.remix_li:last-child {
+    padding-bottom: 150px;
+}
+
+.remix_li:hover {
+    cursor: pointer;
+}
+
+.remix_load {
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: #ffffff;
+}
+
+.remix_name {
+    line-height: 55px !important;
+    font-size: 2.5rem;
+    line-height: 85px;
+    font-weight: 900;
+    color:#ffca18;
+    transition: all 0.2s linear;
+}
+
+@media only screen and (max-width: 992px) {
+    .remix_name {
+        line-height: 45px !important;
+        font-size: 2rem;
+    }
+    #remix_list {
+        width: 80% !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .remix_name {
+        line-height: 55px !important;
+        font-size: 2.2rem;
+    }
+    .remix_load {
+        font-size: 1rem;
+    }
+    #remix_list {
+        left: 4%;
+        width: 100% !important;
+    }
+    #remix_div{
+        padding-left: 7% !important;
+    }
+    .remix_li {
+        padding: 15px 0;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .remix_name {
+        line-height: 30px !important;
+        font-size: 1.5rem;
+    }
+    .remix_load {
+        font-size: 0.65rem;
+    }
+    #remix_list {
+        left: 4%;
+        width: 100% !important;
+    }
+    #remix_div{
+        padding-left: 7% !important;
+    }
+    .remix_li {
+        padding: 10px 0;
+    }
+}
+

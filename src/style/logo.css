@@ -1,0 +1,39 @@
+.logo {
+    top:5.8%; 
+    left:4%; 
+    width:6.25%;
+    z-index: 6;
+    min-width: 75px;
+}
+
+.logo:focus {
+    outline: none;
+}
+
+#logo_a {
+    z-index: 7;
+}
+
+@media only screen and (max-width: 1200px) {
+    .logo {
+        width:7.25%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .logo {
+        width:11.25%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .logo {
+        width:15.25%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .logo {
+        width:20.25%;
+    }
+}

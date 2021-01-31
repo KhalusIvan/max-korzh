@@ -1,0 +1,39 @@
+#footer {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0em;
+    bottom: 6.5%;
+    right: 4%;
+    color: grey;
+    font-size: 12px;
+}
+
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+button:active, button:focus, button:hover {
+    border: none;
+    outline: none !important;
+}
+
+.languageButtonFooter {
+    font-weight: 600;
+    padding: 0px 5px;
+}
+
+.languageButtonFooter:hover {
+    color: rgb(182, 178, 178);
+}
+
+.activeLanguageFooter {
+    color: white;
+}
+
+.activeLanguageFooter:hover {
+    color: white;
+}

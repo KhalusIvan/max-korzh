@@ -1,0 +1,305 @@
+#concert_list {
+    position: relative;
+    left: 8.25%;
+    top: 18%;
+}
+
+.concert_li {
+    padding: 20px 0;
+    transition: all 1s;
+}
+
+.concert_li:last-child {
+    padding-bottom: 150px;
+}
+
+.concert_li:hover {
+    cursor: pointer;
+}
+
+.concert_li:hover .concert_when {
+    color: transparent;
+    -webkit-text-stroke: 1px #ffffff;
+}
+
+.concert_place {
+    font-weight: 500;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.concert_where {
+    font-size: 5rem;
+    line-height: 85px;
+    font-weight: 900;
+    color:#ffca18;
+}
+
+.concert_when {
+    font-size: 5rem;
+    line-height: 85px;
+    font-weight: 900;
+    color: #ffffff;
+    -webkit-text-stroke: 1px #ffffff;
+    transition: all 0.2s linear;
+}
+
+.btn:focus, .btn:active, .btn:hover {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#back_style {
+    text-transform:uppercase;
+    font-size: 0.6rem;
+    position: relative;
+    right: 3%;
+    font-weight: 700;
+    color:white; 
+}
+
+.back_circle_border_back {
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    border-radius:50%; 
+    border:2px solid grey;
+}
+
+.back_circle_border {
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    border:2px solid white;
+    border-radius: 50%;
+}
+
+
+.back_circle_border_bottom {
+    clip-path: inset(50% 0 0 100%);
+    transition: all 0.3s;
+}
+
+.back_circle_border_bottom1 {
+    clip-path: inset(50% 0 0 100%);
+    transition: all 0.3s 0.3s;
+}
+
+.back_circle_border_top {
+    clip-path: inset(0 100% 50% 0);
+    transition: all 0.3s;
+    transition-delay: 0s;
+}
+
+#back_circle:hover  .back_circle_border_bottom{
+    clip-path: inset(50% 0 0 0)
+}
+
+#back_circle:hover  .back_circle_border_bottom1{
+    clip-path: inset(50% 0 0 0)
+}
+
+#back_circle:hover  .back_circle_border_top{
+    clip-path: inset(0 0 50% 0);
+    transition-delay: 0.3s;
+}
+
+#modal_window{
+    max-width: 650px;
+}
+
+#modal_header{
+    height: 60px !important;
+}
+
+.concert_modal {
+    padding: 4% 0 8%;
+    text-align: center;
+}
+
+.concert_place_modal {
+    font-size: 1.5rem !important;
+}
+.concert_where_modal {
+    font-size: 3rem !important;
+    line-height: 55px;
+}
+.concert_when_modal {
+    font-size: 3rem !important;
+    line-height: 65px;
+}
+
+.ticket_title {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+}
+
+.ticket_block {
+    margin: 0px auto 3% auto;
+    display: flex;
+    width: 30%;
+    height: 60px;
+    border:2px solid #ffca18;
+    border-radius: 30px;
+    background-color: #ffca18;
+    justify-content: start;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.ticket_block:hover {
+    background-color: #2a2b2a;
+}
+
+.ticket_block_img {
+    background-image: url("../images/tickets_black.svg");
+    height: 20px;
+    width: 21px;
+    transition: all 0.3s;
+}
+
+.ticket_block:hover .ticket_block_img {
+    background-image: url("../images/tickets_yellow.svg");
+    height: 20px;
+    width: 21px;
+}
+
+.ticket_block_text {
+    color:#2a2b2a;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    letter-spacing: 0px;
+    font-size: 0.7rem;
+    margin-left: 7%;
+}
+
+.ticket_block:hover .ticket_block_text {
+    color:#ffca18;
+}
+
+@media only screen and (max-width: 1050px) {
+    .concert_place {
+        font-size: 1rem;
+    }
+    .concert_where {
+        font-size: 4rem;
+    }
+    .concert_when {
+        font-size: 4rem;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .concert_place {
+        font-size: 1rem;
+    }
+    .concert_where {
+        font-size: 3.5rem;
+        line-height: 65px;
+    }
+    .concert_when {
+        font-size: 3.5rem;
+        line-height: 55px;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    #concert_div{
+        padding-left: 5% !important;
+        top:5% !important;
+    }
+    .concert_place {
+        font-size: 1rem;
+    }
+    .concert_where {
+        font-size: 3rem;
+    }
+    .concert_when {
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    #concert_div{
+        padding-left: 5% !important;
+        top:5% !important;
+    }
+    .concert_place {
+        font-size: 1rem;
+    }
+    .concert_where {
+        font-size: 2rem;
+        line-height: 45px;
+    }
+    .concert_when {
+        font-size: 2rem;
+        line-height: 35px;
+    }
+    .ticket_block {
+        width: 40%;
+    }
+    .concert_place_modal {
+        font-size: 1rem !important;
+    }
+    .concert_where_modal {
+        font-size: 2rem !important;
+        line-height: 45px;
+    }
+    .concert_when_modal {
+        font-size: 2rem !important;
+        line-height: 45px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #modal_window{
+        max-width: 500px;
+    }
+    #button_back {
+        width: 60% !important;
+    }
+}
+
+@media only screen and (max-width: 455px) {
+    #concert_div{
+        padding-left: 0% !important;
+        top:5% !important;
+    }
+    .concert_place {
+        font-size: 1rem;
+    }
+    .concert_where {
+        font-size: 1.7rem;
+        line-height: 45px;
+    }
+    .concert_when {
+        font-size: 1.7rem;
+        line-height: 35px;
+    }
+    .ticket_block {
+        width: 60%;
+    }
+    .ticket_title{
+        font-size: 0.8rem;;
+    }
+    .concert_place_modal {
+        font-size: 1rem !important;
+    }
+    .concert_where_modal {
+        font-size: 1.5rem !important;
+        line-height: 35px;
+    }
+    .concert_when_modal {
+        font-size: 1.5rem !important;
+        line-height: 35px;
+    }
+    #button_back {
+        width: 70% !important;
+    }
+    #back_style {
+        font-size: 0.5rem;
+    }
+}
