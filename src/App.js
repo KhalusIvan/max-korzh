@@ -4,6 +4,7 @@ import Language from './context/Language'
 
 function App() {
   let [language, setLanguage] = useState(localStorage.getItem('language')||'ru')
+  localStorage.setItem('language', language)
   function changeLanguage() {
     language === 'ru' ? localStorage.setItem('language','en') : localStorage.setItem('language', 'ru')
     language === 'ru' ? setLanguage('en') : setLanguage('ru')
