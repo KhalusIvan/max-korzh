@@ -57,7 +57,9 @@ export const Concerts = (props) => {
                     $('#cursor_circle').css("background-color", "#1589FF");
                     $('#cursor_circle').css("border", "2px solid transparent");
                     setTimeout(() => {
-                        $('#cursor_circle').append("<div style={{textTransform:'uppercase'}} id='cursor_text'>Купить билет</div>");
+                        $('#cursor_circle').append(`<div style={{textTransform:'uppercase'}} id='cursor_text'>${
+                            (localStorage.getItem('language') === 'ru') ? ("Купить билет") : ("Buy ticket")
+                        }</div>`);
                     }, 0)
                     
                 })
@@ -79,8 +81,8 @@ export const Concerts = (props) => {
         {
             id:0,
             place:"STADIUM SKONTO",
-            where:"РИГА (ЛАТВИЯ)",
-            when:"22 МАЯ 2021", 
+            where:(localStorage.getItem('language') === 'ru') ? ("РИГА (ЛАТВИЯ)") : ("RIGA (LATVIA)"),
+            when:(localStorage.getItem('language') === 'ru') ? ("22 МАЯ 2021") : ("22 MAY 2021"), 
             operators:[
                 {"fanaticka":"https://fanaticka.live/event/MaxKorzhSkonto"},
                 {"bilesuserviss": "https://store.bilesuserviss.lv/public/?concert=305385&lang=lat&center=126&policy=1&design=&shop_provider=korzh#view=ticketsselect"}
@@ -88,31 +90,31 @@ export const Concerts = (props) => {
         },
         {
             id:1,
-            place:"ЕКАТИРИНБУРГ АРЕНА",
-            where:"ЕКАТЕРИНБУРГ (РОССИЯ)",
-            when:"12 ИЮНЯ 2021",
+            place:(localStorage.getItem('language') === 'ru') ? ("ЕКАТИРИНБУРГ АРЕНА") : ("YEKATERINBURG ARENA"),
+            where:(localStorage.getItem('language') === 'ru') ? ("ЕКАТЕРИНБУРГ (РОССИЯ)") : ("YEKATERINBURG (RUSSIA)"),
+            when:(localStorage.getItem('language') === 'ru') ? ("12 ИЮНЯ 2021") : ("12 JUNE 2021"),
             operators:[
                 {"fanaticka":"https://fanaticka.live/event/maxkorzhekb"},
-                {"кассир ру": "https://ekb.kassir.ru/koncert/maks-korj#51199"},
-                {"кассы ру": "https://ekb.kassy.ru/events/koncerty-i-shou/2-23948/"}
+                {"kassir ru": "https://ekb.kassir.ru/koncert/maks-korj#51199"},
+                {"kassi ru": "https://ekb.kassy.ru/events/koncerty-i-shou/2-23948/"}
             ]
         },
         {
             id:2,
-            place:"СТАДИОН СПАРТАК",
-            where:"НОВОСИБИРСК (РОССИЯ)",
-            when:"26 ИЮНЯ 2021",
+            place:(localStorage.getItem('language') === 'ru') ? ("СТАДИОН СПАРТАК") : ("STADIUM SPARTAK"),
+            where:(localStorage.getItem('language') === 'ru') ? ("НОВОСИБИРСК (РОССИЯ)") : ("NOVOSIBIRSK (RUSSIA)"),
+            when:(localStorage.getItem('language') === 'ru') ? ("26 ИЮНЯ 2021") : ("26 JUNE 2021"),
             operators:[
                 {"fanaticka":"https://fanaticka.by/event/KorzhNovosib"},
-                {"кассир ру": "https://nsk.kassir.ru/koncert/maks-korj#10681"},
-                {"кассы ру": "https://nsk.kassy.ru/events/koncerty-i-shou/2-27092/sections/"}
+                {"kassir ru": "https://nsk.kassir.ru/koncert/maks-korj#10681"},
+                {"kassi ru": "https://nsk.kassy.ru/events/koncerty-i-shou/2-27092/sections/"}
             ]
         },
         {
             id:3,
-            place:"СТАДИОН ЧЕРНОМОРЕЦ",
-            where:"ОДЕССА (УКРАИНА)",
-            when:"24 ИЮЛЯ 2021",
+            place:(localStorage.getItem('language') === 'ru') ? ("СТАДИОН ЧЕРНОМОРЕЦ") : ("CHERNOMORETS STADIUM"),
+            where:(localStorage.getItem('language') === 'ru') ? ("ОДЕССА (УКРАИНА)") : ("ODESSA (UKRAINE)"),
+            when:(localStorage.getItem('language') === 'ru') ? ("24 ИЮЛЯ 2021") : ("24 JULY 2021"),
             operators:[
                 {"concert.ua":"https://concert.ua/ru/booking/max-korzh-odessa/"},
                 {"fanaticka": "https://fanaticka.live/event/MaksKorzhOdessa"}
@@ -120,9 +122,9 @@ export const Concerts = (props) => {
         },
         {
             id:4,
-            place:"ГАЗПРОМ АРЕНА",
-            where:"САНКТ-ПЕТЕРБУРГ (РОССИЯ)",
-            when:"4 СЕНТЯБРЯ 2021",
+            place:(localStorage.getItem('language') === 'ru') ? ("ГАЗПРОМ АРЕНА") : ("GAZPROM ARENA"),
+            where:(localStorage.getItem('language') === 'ru') ? ("САНКТ-ПЕТЕРБУРГ (РОССИЯ)") : ("SAINT-PETERSBURG (RUSSIA)"),
+            when:(localStorage.getItem('language') === 'ru') ? ("4 СЕНТЯБРЯ 2021") : ("4 SEPTEMBER 2021"),
             operators:[
                 {"fanaticka":"https://fanaticka.ru/event/maxkorzh_piter"},
                 {"alloshow": "https://alloshow.ru/activity/maks-korzh-v-peterburge#04-sentyabrya-2021-19-00"}
@@ -130,7 +132,7 @@ export const Concerts = (props) => {
         },
     ];
     let ConsertsList = concerts.map(concert => {
-        return <li className="concert_li" key={concert.when}>
+        return <li className="concert_li" key={concert.id}>
             <button type="button" onClick={()=>{setConcertId(concert.id); setTimeout(()=>{$("#back_circle").width($("#back_circle").height())},200)}} className="text-left" data-toggle="modal" data-target="#exampleModal">
                 <div className="concert_place">{concert.place}</div>
                 <div className="concert_where">{concert.where}</div>
@@ -172,7 +174,15 @@ export const Concerts = (props) => {
                                     <img style={{transform:"translate(-100%,0%)"}} id="logo_img" alt="logo" src={logo} className="position-absolute" />
                                 </div>
                                 <button id="button_back" type="button" data-dismiss="modal" aria-label="Close" style={{paddingRight:"3%", width:"60%"}} className="d-flex align-items-center justify-content-end">
-                                    <div id="back_style">Назад к расписанию</div>
+                                    <div id="back_style">
+                                        {
+                                            (localStorage.getItem('language') === 'ru') ? (
+                                                "Назад к расписанию"
+                                            ) : (
+                                                "Back to concert"
+                                            )
+                                        }
+                                        </div>
                                     <div id="back_circle" className="h-100 position-relative back_circle">
                                         <div className="back_circle_border_back"></div>
                                         <div id="back_circle_border_bottom" className="back_circle_border back_circle_border_bottom"></div>
@@ -188,7 +198,15 @@ export const Concerts = (props) => {
                                 <div className="concert_when concert_when_modal">{concerts[concertId].when}</div>
                             </div>
                             <div>
-                                <div className="ticket_title">Выберите билетного оператора:</div>
+                                <div className="ticket_title">
+                                        {
+                                            (localStorage.getItem('language') === 'ru') ? (
+                                                "Выберите билетного оператора:"
+                                            ) : (
+                                                "Choose a ticket servicer:"
+                                            )
+                                        }
+                                    </div>
                                 <Operators />
                             </div>
                         </div>

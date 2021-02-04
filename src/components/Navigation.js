@@ -34,17 +34,6 @@ export const Navigation = (props) => {
             id:"contacts"
         }
     ]
-    /*useEffect(()=>{
-        console.log(isShowed)
-        console.log("styl")
-        if(isShowed) {
-            document.getElementById("navigation_full_size").style.top = "0%";
-            document.getElementById("navigation_full_size").style.opacity = "100%";
-        } else {
-            document.getElementById("navigation_full_size").style.top = "10%";
-            document.getElementById("navigation_full_size").style.opacity = "0%"; 
-        }
-    },[isShowed])*/
     useEffect(() => {
         for(let url of urls) {
             if (url.path === location.pathname){
@@ -130,37 +119,109 @@ export const Navigation = (props) => {
                         </div>
                     </button>
                     <div className="menu_label">
-                        <span>Меню</span>
+                        <span>
+                        {
+                            (localStorage.getItem('language') === 'ru') ? (
+                                "Меню"
+                            ) : (
+                                "Menu"
+                            )
+                        }
+                        </span>
                     </div>
                     <div className="menu_label menu_label_close">
-                        <span>Закрыть</span>
+                        <span>
+                        {
+                            (localStorage.getItem('language') === 'ru') ? (
+                                "Закрыть"
+                            ) : (
+                                "Close"
+                            )
+                        }
+                        </span>
                     </div>
                 </div>
                 
                 <ul id="list" style={{zIndex:"6"}} className="list-unstyled  d-none d-xl-inline-block">
                     <li className="navigatorLi">
-                        <Link onClick={(e)=>animation(e,`/kontserty/`)} id="concerts" className="" to={`/kontserty/`}>КОНЦЕРТЫ</Link>
+                        <Link onClick={(e)=>animation(e,`/kontserty/`)} id="concerts" className="" to={`/kontserty/`}>
+                        {
+                            (localStorage.getItem('language') === 'ru') ? (
+                                "КОНЦЕРТЫ"
+                            ) : (
+                                "CONCERTS"
+                            )
+                        }</Link>
                     </li>
                     <li className="navigatorLi">
-                        <Link onClick={(e)=>animation(e,`/novosti/`)} id="news" to={`/novosti/`}>НОВОСТИ</Link>
+                        <Link onClick={(e)=>animation(e,`/novosti/`)} id="news" to={`/novosti/`}>
+                        {
+                            (localStorage.getItem('language') === 'ru') ? (
+                                "НОВОСТИ"
+                            ) : (
+                                "NEWS"
+                            )
+                        }</Link>
                     </li>
                     <li className="navigatorLi">
-                        <Link onClick={(e)=>animation(e,`/muzyika/`)} id="music" to={`/muzyika/`}>МУЗЫКА</Link>
+                        <Link onClick={(e)=>animation(e,`/muzyika/`)} id="music" to={`/muzyika/`}>
+                        {
+                            (localStorage.getItem('language') === 'ru') ? (
+                                "МУЗЫКА"
+                            ) : (
+                                "MUSIC"
+                            )
+                        }</Link>
                     </li>
                     <li className="navigatorLi">
-                        <Link onClick={(e)=>animation(e,`/foto/`)} id="photo" to={`/foto/`}>ФОТО</Link>
+                        <Link onClick={(e)=>animation(e,`/foto/`)} id="photo" to={`/foto/`}>
+                        {
+                            (localStorage.getItem('language') === 'ru') ? (
+                                "ФОТО"
+                            ) : (
+                                "PHOTO"
+                            )
+                        }</Link>
                     </li>
                     <li className="navigatorLi">
-                        <Link onClick={(e)=>animation(e,`/videos/`)} id="video" to={`/videos/`}>ВИДЕО</Link>
+                        <Link onClick={(e)=>animation(e,`/videos/`)} id="video" to={`/videos/`}>
+                        {
+                            (localStorage.getItem('language') === 'ru') ? (
+                                "ВИДЕО"
+                            ) : (
+                                "VIDEO"
+                            )
+                        }</Link>
                     </li>
                     <li className="navigatorLi">
-                        <Link onClick={(e)=>animation(e,`/remixpack/`)} id="remix" to={`/remixpack/`}>РЕМИКС ПАК</Link>
+                        <Link onClick={(e)=>animation(e,`/remixpack/`)} id="remix" to={`/remixpack/`}>
+                        {
+                            (localStorage.getItem('language') === 'ru') ? (
+                                "РЕМИКС ПАК"
+                            ) : (
+                                "REMIX PACK"
+                            )
+                        }</Link>
                     </li>
                     <li className="navigatorLi">
-                        <Link onClick={(e)=>animation(e,`/obo-mne/`)} id="aboutMe" to={`/obo-mne/`}>ОБО МНЕ</Link>
+                        <Link onClick={(e)=>animation(e,`/obo-mne/`)} id="aboutMe" to={`/obo-mne/`}>
+                        {
+                            (localStorage.getItem('language') === 'ru') ? (
+                                "ОБО МНЕ"
+                            ) : (
+                                "ABOUT ME"
+                            )
+                        }</Link>
                     </li>
                     <li className="navigatorLi">
-                        <Link onClick={(e)=>animation(e,`/kontaktyi/`)} id="contacts" to={`/kontaktyi/`}>КОНТАКТЫ</Link>
+                        <Link onClick={(e)=>animation(e,`/kontaktyi/`)} id="contacts" to={`/kontaktyi/`}>
+                        {
+                            (localStorage.getItem('language') === 'ru') ? (
+                                "КОНТАКТЫ"
+                            ) : (
+                                "CONTACTS"
+                            )
+                        }</Link>
                     </li>
                 </ul>
             </div>

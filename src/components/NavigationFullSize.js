@@ -1,10 +1,12 @@
-import React, {useEffect} from 'react'
+import React, {useEffect,useContext} from 'react'
 import {Link, useHistory, useLocation} from "react-router-dom";
 import "../style/navigation.css"
 import $ from "jquery"
+import Language from '../context/Language'
 
 
 export const NavigationFullSize = (props) => {
+    const language = useContext(Language)
     let location = useLocation();
     let history = useHistory()
     let urls = [{
@@ -33,7 +35,11 @@ export const NavigationFullSize = (props) => {
             id:"contactsFull"
         }
     ]
-    
+    function languageClick(lang) {
+        if(lang !== language.language) {
+            language.changeLanguage()
+        }
+    }
     useEffect(()=> {
         for(let url of urls) {
             if (url.path === location.pathname){
@@ -90,10 +96,10 @@ export const NavigationFullSize = (props) => {
                     </li>                   
                 </ul>
                 <div id="buttonsLanguage">
-                    <button id="languageSwitcher1" className="languageButton activeLanguage">
+                    <button id="languageSwitcher1" onClick={()=>{languageClick('ru')}} className={localStorage.getItem('language') === 'ru'?"languageButton activeLanguage":"languageButton"}>
                         RU
                     </button>
-                    <button id="languageSwitcher2" className="languageButton">
+                    <button id="languageSwitcher2" onClick={()=>{languageClick('en')}} className={localStorage.getItem('language') === 'en'?"languageButton activeLanguage":"languageButton"}>
                         EN
                     </button>
                 </div>
@@ -101,33 +107,89 @@ export const NavigationFullSize = (props) => {
             <div style={{width:"60%"}} className="h-100 position-relative">
                 <ul id="fullList" className="list-unstyled navigator_block d-inline-block text-left">
                     <li className="fullnavigatorLi">
-                        <Link onClick={(e)=>animation(e,`/kontserty/`)} id="concertsFull" className="" to={`/kontserty/`}>КОНЦЕРТЫ</Link>
+                        <Link onClick={(e)=>animation(e,`/kontserty/`)} id="concertsFull" className="" to={`/kontserty/`}>
+                        {
+                            (localStorage.getItem('language') === 'ru') ? (
+                                "КОНЦЕРТЫ"
+                            ) : (
+                                "CONCERTS"
+                            )
+                        }</Link>
                     </li>
                     <li className="fullnavigatorLi">
-                        <Link onClick={(e)=>animation(e,`/novosti/`)} id="newsFull" to={`/novosti/`}>НОВОСТИ</Link>
+                        <Link onClick={(e)=>animation(e,`/novosti/`)} id="newsFull" to={`/novosti/`}>
+                        {
+                            (localStorage.getItem('language') === 'ru') ? (
+                                "НОВОСТИ"
+                            ) : (
+                                "NEWS"
+                            )
+                        }</Link>
                     </li>
                     <li className="fullnavigatorLi">
-                        <Link onClick={(e)=>animation(e,`/muzyika/`)} id="musicFull" to={`/muzyika/`}>МУЗЫКА</Link>
+                        <Link onClick={(e)=>animation(e,`/muzyika/`)} id="musicFull" to={`/muzyika/`}>
+                        {
+                            (localStorage.getItem('language') === 'ru') ? (
+                                "МУЗЫКА"
+                            ) : (
+                                "MUSIC"
+                            )
+                        }</Link>
                     </li>
                     <li className="fullnavigatorLi">
-                        <Link onClick={(e)=>animation(e,`/foto/`)} id="photoFull" to={`/foto/`}>ФОТО</Link>
+                        <Link onClick={(e)=>animation(e,`/foto/`)} id="photoFull" to={`/foto/`}>
+                        {
+                            (localStorage.getItem('language') === 'ru') ? (
+                                "ФОТО"
+                            ) : (
+                                "PHOTO"
+                            )
+                        }</Link>
                     </li>
                     <li className="fullnavigatorLi">
-                        <Link onClick={(e)=>animation(e,`/videos/`)} id="videoFull" to={`/videos/`}>ВИДЕО</Link>
+                        <Link onClick={(e)=>animation(e,`/videos/`)} id="videoFull" to={`/videos/`}>
+                        {
+                            (localStorage.getItem('language') === 'ru') ? (
+                                "ВИДЕО"
+                            ) : (
+                                "VIDEO"
+                            )
+                        }</Link>
                     </li>
                     <li className="fullnavigatorLi">
-                        <Link onClick={(e)=>animation(e,`/remixpack/`)} id="remixFull" to={`/remixpack/`}>РЕМИКС ПАК</Link>
+                        <Link onClick={(e)=>animation(e,`/remixpack/`)} id="remixFull" to={`/remixpack/`}>
+                        {
+                            (localStorage.getItem('language') === 'ru') ? (
+                                "РЕМИКС ПАК"
+                            ) : (
+                                "REMIX PACK"
+                            )
+                        }</Link>
                     </li>
                     <li className="fullnavigatorLi">
-                        <Link onClick={(e)=>animation(e,`/obo-mne/`)} id="aboutMeFull" to={`/obo-mne/`}>ОБО МНЕ</Link>
+                        <Link onClick={(e)=>animation(e,`/obo-mne/`)} id="aboutMeFull" to={`/obo-mne/`}>
+                        {
+                            (localStorage.getItem('language') === 'ru') ? (
+                                "ОБО МНЕ"
+                            ) : (
+                                "ABOUT ME"
+                            )
+                        }</Link>
                     </li>
                     <li className="fullnavigatorLi">
-                        <Link onClick={(e)=>animation(e,`/kontaktyi/`)} id="contactsFull" to={`/kontaktyi/`}>КОНТАКТЫ</Link>
+                        <Link onClick={(e)=>animation(e,`/kontaktyi/`)} id="contactsFull" to={`/kontaktyi/`}>
+                        {
+                            (localStorage.getItem('language') === 'ru') ? (
+                                "КОНТАКТЫ"
+                            ) : (
+                                "CONTACTS"
+                            )
+                        }</Link>
                     </li>
                 </ul>
                 <div className="developer_block">
                     <span className="d-inline-block">
-                        MADE BY <a className="developer_link" href="#" style={{letterSpacing: "0em"}}>ADVANCED TEAM</a>
+                        MADE BY <a className="developer_link" href="#" style={{letterSpacing: "0em"}}>KHALUS IVAN</a>
                     </span>
                 </div>
             </div>

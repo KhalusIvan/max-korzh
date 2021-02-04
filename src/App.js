@@ -1,10 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Main } from './components/Main'
+import Language from './context/Language'
 
 function App() {
+  let [language, setLanguage] = useState(localStorage.getItem('language')||'ru')
+  function changeLanguage() {
+    language === 'ru' ? localStorage.setItem('language','en') : localStorage.setItem('language', 'ru')
+    language === 'ru' ? setLanguage('en') : setLanguage('ru')
+  }
   return (
     <div>
-      <Main />
+      <Language.Provider value={{language:language, changeLanguage: changeLanguage}}>
+        <Main />
+      </Language.Provider>
     </div>
   );
 }

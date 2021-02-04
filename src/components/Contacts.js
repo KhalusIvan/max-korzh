@@ -56,15 +56,15 @@ export const Contacts = (props) => {
                 <div id="contacts_right_side" className="h-100 position-relative">
                     <ul id="contacts_right" style={{opacity:"0%", paddingTop: "10%"}} className="list-unstyled contacts_info_block d-inline-block text-left">
                         <li className="contacts_info">
-                            <div className="contacts_info_title">Права/контент</div>
+                            <div className="contacts_info_title">{(localStorage.getItem('language') === 'ru') ? ('Права/контент') : ("Media/content")}</div>
                             <a href="mailto:osokin@maxkorzh.live" target="_blank" className="contacts_info_subtitle">osokin@maxkorzh.live</a>
                         </li>
                         <li className="contacts_info">
-                            <div className="contacts_info_title">По вопросам концертов</div>
+                            <div className="contacts_info_title">{(localStorage.getItem('language') === 'ru') ? ('По вопросам концертов') : ("Questions about concerts")}</div>
                             <a href="mailto:maxkorzhconcert@gmail.com" target="_blank" className="contacts_info_subtitle">maxkorzhconcert@gmail.com</a>
                         </li>
                         <li className="contacts_info">
-                            <div className="contacts_info_title">Для сотрудничества по творчеству</div>
+                            <div className="contacts_info_title">{(localStorage.getItem('language') === 'ru') ? ('Для сотрудничества по творчеству') : ("Cooperations")}</div>
                             <a href="mailto:info@maxkorzh.live" target="_blank" className="contacts_info_subtitle">info@maxkorzh.live</a>
                         </li>
                     </ul>

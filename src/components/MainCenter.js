@@ -18,10 +18,24 @@ export const MainCenter = (props) => {
         <div style={{left:'12.5%', top:"0%", zIndex:"3"}} className="position-fixed h-100 w-75">
             <div id="main_textBlock" style={{opacity:"0%", paddingTop: "10%", top:"50%", transition:"all 1.5s ease 0.2s", left:"10%", fontSize:"100px", fontWeight:"600", fontFamily:"'Montserrat', sans-serif" }} className="position-absolute">
                 <h1 id="text_title">
-                    МАКС КОРЖ
+                {
+                    (localStorage.getItem('language') === 'ru') ? (
+                        "МАКС КОРЖ"
+                    ) : (
+                        "MAX KORZH"
+                    )
+                }
+                    
                 </h1>
                 <h1 id="textStroked">
-                    OFFICIAL SITE
+                {
+                    (localStorage.getItem('language') === 'ru') ? (
+                        "OFFICIAL SITE"
+                    ) : (
+                        "OFFICIAL WEBSITE"
+                    )
+                }
+                    
                 </h1>
             </div>
         </div>
