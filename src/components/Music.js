@@ -127,7 +127,7 @@ export const Music = (props) => {
         $('#cursor_circle').empty();
         setTimeout(()=> {
             history.push(where)
-        },6000)
+        },600)
     }
 
     let MusicsList = musics.map(music => {

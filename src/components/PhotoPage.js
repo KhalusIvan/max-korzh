@@ -2,11 +2,11 @@ import React from 'react'
 import { Social } from './Social';
 import { Photo } from './Photo';
 
-export const PhotoPage = () => {
+export const PhotoPage = (props) => {
     return (
         <div>
             <Social />
-            <Photo />
+            <Photo setIsFirstLoad={props.setIsFirstLoad} isFirstLoad={props.isFirstLoad}  />
         </div>
     )
 }

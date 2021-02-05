@@ -3,11 +3,11 @@ import { Social } from './Social';
 import { Video } from './Video';
 
 
-export const VideoPage = () => {
+export const VideoPage = (props) => {
     return (
         <div>
             <Social />
-            <Video />
+            <Video setIsFirstLoad={props.setIsFirstLoad} isFirstLoad={props.isFirstLoad}  />
         </div>
     )
 }
