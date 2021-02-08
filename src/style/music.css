@@ -2,6 +2,44 @@ img {
     transition: top 0.6s;
 }
 
+#button_top {
+    width: 10%;
+}
+
+#back_circle {
+    position: absolute;
+    right: 0;
+    height: 100%;
+}
+
+#back_style {
+    display: inline;
+    position: absolute;
+    width: 95%;
+    height: 25%;
+    top: 50%;
+    right: 0%;
+    transform: translate(0%, -50%) rotate(0deg);
+    text-transform: uppercase;
+    font-size:12px;
+    font-weight: 700;
+    color: white;
+    z-index: 7;
+    opacity: 100%;
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+    -webkit-transition:opacity 0.8s, transform 0.6s;
+}
+
+#back_style span {
+    position: absolute;
+    width: 50%;
+    display: inline-block;
+    left: 0%;
+    font-size: 0.7rem;
+    text-align: right;
+}
+
 .music_li {
     position: relative;
     transition: all 1s;
@@ -61,6 +99,26 @@ img {
     color: white;  
 }
 
+#background_image{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 100%;
+    transition: top .7s;
+    filter: blur(10px);
+    z-index: 1;
+}
+
+#background_bg{
+    width: 100%;
+    height: 75%;
+    position: fixed;
+    top: 100%;
+    transition: top .7s .3s;
+    z-index: 2;
+    background-color: rgb(41, 41, 41);
+}
+
 .one_music_content{
     height: 75%;
     width: 100%;
@@ -75,7 +133,6 @@ img {
     position: absolute;
     left: 50%;
     transform: translate(-50%,-40%);
-    transition: all .5s;
 }
 
 .one_music_player{
@@ -145,6 +202,9 @@ img {
 }
 
 @media only screen and (max-width: 1200px) {
+    #button_top {
+        width:12%;
+    }
     .music_text {
         width: 60%;
         font-size: 80px;
@@ -159,6 +219,16 @@ img {
     .one_music_content_image {
         width: 35%;
         transform: translate(-50%,-25%);
+    }
+    .transition_music_image {
+        width: 35%;
+        transform: translate(-50%, -25%);
+    }
+    .transition_music_image {
+        width: 25%;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0%);
     }
     .one_music_player{
         width: 55%;
@@ -180,6 +250,9 @@ img {
 }
 
 @media only screen and (max-width: 992px) {
+    #button_top {
+        width:15%;
+    }
     .music_text {
         opacity: 100%;
         width: 70%;
@@ -195,6 +268,10 @@ img {
     .one_music_content_image {
         width: 50%;
         transform: translate(-50%,-25%);
+    }
+    .transition_music_image {
+        width: 50%;
+        transform: translate(-50%, -25%);
     }
     .one_music_player{
         width: 55%;
@@ -215,6 +292,9 @@ img {
 }
 
 @media only screen and (max-width: 768px) {
+    #button_top {
+        width:22%;
+    }
     .music_text {
         opacity: 100%;
         width: 78%;
@@ -230,6 +310,10 @@ img {
     .one_music_content_image {
         width: 60%;
         transform: translate(-50%,-15%);
+    }
+    .transition_music_image {
+        width: 60%;
+        transform: translate(-50%, -15%);
     }
     .one_music_player{
         width: 65%;
@@ -250,6 +334,9 @@ img {
 }
 
 @media only screen and (max-width: 576px) {
+    #button_top {
+        width:33%;
+    }
     .music_text {
         opacity: 100%;
         width: 85%;
@@ -265,6 +352,10 @@ img {
     .one_music_content_image {
         width: 65%;
         transform: translate(-50%,-10%);
+    }
+    .transition_music_image {
+        width: 65%;
+        transform: translate(-50%, -10%);
     }
     .one_music_player{
         width: 75%;
@@ -285,6 +376,9 @@ img {
 }
 
 @media only screen and (max-width: 400px) {
+    #button_top {
+        width:40%;
+    }
     .music_text {
         opacity: 100%;
         width: 90%;
@@ -300,6 +394,10 @@ img {
     .one_music_content_image {
         width: 65%;
         transform: translate(-50%,-10%);
+    }
+    .transition_music_image {
+        width: 65%;
+        transform: translate(-50%, -10%);
     }
     .one_music_player{
         width: 75%;

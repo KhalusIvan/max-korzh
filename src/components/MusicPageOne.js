@@ -16,7 +16,7 @@ export const MusicPageOne = (props) => {
     let musics = [
         {
             photo:album1,
-            title:"её виной",
+            title:(localStorage.getItem('language') === 'ru') ? ("её виной") : ("Yeyo Vinoy (Her Fault)"),
             year:"2020",
             href:"ee-vinoi",
             music:music1,
@@ -24,7 +24,7 @@ export const MusicPageOne = (props) => {
         },
         {
             photo:album2,
-            title:"тепло",
+            title:(localStorage.getItem('language') === 'ru') ? ("тепло") : ("Teplo (Warm)"),
             year:"2020",
             href:"teplo",
             music:music2,
@@ -32,7 +32,7 @@ export const MusicPageOne = (props) => {
         },
         {
             photo:album3,
-            title:"времена",
+            title:(localStorage.getItem('language') === 'ru') ? ("времена") : ("Vremena (Times)"),
             year:"2020",
             href:"vremena",
             music:music3,
@@ -51,6 +51,20 @@ export const MusicPageOne = (props) => {
     let [audio, setAudio] = useState(new Audio(musics[musicsIndex].music));
     let [isDrag, setIsDrag] = useState(false)
     let player = null;
+    useEffect(() => {
+        document.getElementById("one_music_player").style.transition = "all 1.5s ease 0.2s";
+        if(props.isFirstLoad) {
+            document.getElementById("one_music_player").style.transition = "all 1.5s ease 3.5s";
+            setTimeout(()=>{
+                document.getElementById("one_music_player").style.transition = "all 1.5s ease 0.2s";
+                props.setIsFirstLoad(false)
+            },3500)
+        }
+        document.getElementById("one_music_player").style.paddingTop = "0px";
+        document.getElementById("one_music_player").style.opacity = "100%";
+        $('#button_top').height($('#button_top').width()/ 8 * 3);
+        $('#back_circle').width($('#back_circle').height());
+    }, [])
     useEffect(()=>{
         let dot = document.getElementById('one_music_player_bar_dot')
         let fillLine = document.getElementById('one_music_player_bar_fill')
@@ -62,8 +76,6 @@ export const MusicPageOne = (props) => {
         props.setIsFirstLoad(false)
         document.getElementById('navigation').style.opacity = "0%"
         document.getElementById('navigation_full_size').style.opacity = "0%"
-        $('#back_circle').height(window.innerHeight/15)
-        $('#back_circle').width(window.innerHeight/15)
         setTimeout(()=>{
             document.getElementById('navigation').style.display = "none"
             document.getElementById('navigation_full_size').style.display = "none"
@@ -121,7 +133,6 @@ export const MusicPageOne = (props) => {
                 timer.innerHTML = timeString
                 let percent = 100 * timeInSecond / Math.ceil(parseFloat(audio.duration, 10))
                 if(!isDrag) {
-                    console.log("plaaaaaaaaaaaaaaayyyyyyy")
                     fillLine.style.width = percent + "%";
                     dot.style.left = percent + "%";
                 }
@@ -163,8 +174,8 @@ export const MusicPageOne = (props) => {
         <>
             <Social />
             <div id="button_top" onClick={(e)=>{animationFinish(e,`/muzyika/`)}} style={{right:"4%", top: "6%", zIndex:'6', opacity:'0%'}} className="position-fixed d-flex align-items-center">
-                <div id="back_style" style={{right:"10%"}}>Назад</div>
-                <div id="back_circle" className="position-relative back_circle">
+                <div id="back_style"><span>{(localStorage.getItem('language') === 'ru') ? ('Назад') : ("Back")}</span></div>
+                <div id="back_circle" className="back_circle">
                     <div className="back_circle_border_back"></div>
                     <div id="back_circle_border_bottom" className="back_circle_border back_circle_border_bottom"></div>
                     <div id="back_circle_border_bottom1" className="back_circle_border back_circle_border_bottom1"></div>
@@ -175,8 +186,8 @@ export const MusicPageOne = (props) => {
             <div style={{top:"0%", zIndex:"5", overflowY: "scroll", overflowX:"hidden",backgroundColor:"#3d3d3c"}} className="position-fixed w-100 h-100">
                 <img style={{filter:'blur(10px)'}} src={musics[musicsIndex].photo} alt="albumBg" className="w-100 h-100 d-block" />
                 <div className="one_music_content">
-                    <img className="one_music_content_image" src={musics[musicsIndex].photo} alt="albumBg" />
-                    <div id="one_music_player" className="one_music_player">
+                    <img className="one_music_content_image" style={{transition: "all .5s"}} src={musics[musicsIndex].photo} alt="albumBg" />
+                    <div id="one_music_player" style={{opacity:"0%", paddingTop: "10%"}} className="one_music_player">
                         <div className="one_music_player_text">
                             <div id="one_music_controller+title" className="d-flex justify-content-between">
                             {

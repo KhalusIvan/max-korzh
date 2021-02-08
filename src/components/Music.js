@@ -87,39 +87,53 @@ export const Music = (props) => {
     let musics = [
         {
             photo:album1,
-            title:"её виной",
+            title:(localStorage.getItem('language') === 'ru') ? ("её виной") : ("Yeyo Vinoy (Her Fault)"),
             year:"2020",
             href:"ee-vinoi"
         },
         {
             photo:album2,
-            title:"тепло",
+            title:(localStorage.getItem('language') === 'ru') ? ("тепло") : ("Teplo (Warm)"),
             year:"2020",
             href:"teplo"
         },
         {
             photo:album3,
-            title:"времена",
+            title:(localStorage.getItem('language') === 'ru') ? ("времена") : ("Vremena (Times)"),
             year:"2020",
             href:"vremena"
         },
     ];
 
     function redirect(where, e){
-        let image = document.getElementById("music_animate_image");
-        image.style.transition = 'all 2s'
         document.getElementById("music_scroll").style.transition='all 0.5s';
-        image.src = e.target.src
-        image.style.width = e.target.width + 'px'
-        image.style.top = $(`#${e.target.id}`).offset().top + 'px'
-        image.style.left = $(`#${e.target.id}`).offset().left + 'px'
-        document.getElementById("music_list").style.display="none";
+        let image = document.getElementById("music_animate_image");
+        let backgroundImage = document.getElementById("background_image");
+        let backgroundBg = document.getElementById("background_bg");
         image.classList.add('d-block');
         image.classList.remove('d-none');
-        //image.classList.add('one_music_content_image');
-        image.style.top = "25%"
-        //image.style.removeProperty('width');
-        //image.style.left = '50%'
+        image.style.transform = 'translate(-50%, 0%)';
+        image.src = e.target.src
+        backgroundImage.src = e.target.src
+        image.style.width = e.target.width + 'px'
+        image.style.top = $(`#${e.target.id}`).offset().top + 'px'
+        document.getElementById("music_list").style.display="none";
+        document.getElementById("music_div").style.scrollTop=0;
+        document.getElementById("music_div").style.overflowY="hidden";
+        backgroundImage.classList.add('d-block');
+        backgroundImage.classList.remove('d-none');
+        backgroundBg.classList.add('d-block');
+        backgroundBg.classList.remove('d-none');
+        setTimeout(()=> {
+            backgroundImage.style.top="0%"
+            backgroundBg.style.top="25%"
+        },200)
+        setTimeout(()=> {
+            image.style.transition='top 1.5s, width 1.5s, transform 1.5s';
+            image.style.top = "25%"
+            image.style.removeProperty('transform');
+            image.style.removeProperty('width');  
+        },500)
         $('#cursor_circle').height(window.innerHeight / 20);
         $('#cursor_circle').width(window.innerHeight / 20);
         $('#cursor_circle').css("background-color", "transparent");
@@ -127,7 +141,7 @@ export const Music = (props) => {
         $('#cursor_circle').empty();
         setTimeout(()=> {
             history.push(where)
-        },600)
+        },2000)
     }
 
     let MusicsList = musics.map(music => {
@@ -150,7 +164,9 @@ export const Music = (props) => {
                 <ul id="music_list" style={{opacity:"0%", zIndex:"4", paddingTop: "20%"}} className="list-unstyled w-100">
                     {MusicsList}
                 </ul>
-                <img id="music_animate_image" className="d-none position-absolute" src={album1} alt='music' />
+                <img id="music_animate_image" className="d-none one_music_content_image" style={{zIndex:'10'}} src={album1} alt='music' />
+                <img id="background_image" className="d-none" src={album1} alt='music' />
+                <div id="background_bg" className="d-none"></div>
             </div>
         </>
         

@@ -158,6 +158,8 @@ export const NewsPageOne = (props) => {
         setTimeout(()=>{
             document.getElementById('button_top').style.opacity="100%"
         },200)
+        $('#button_top').height($('#button_top').width()/ 8 * 3);
+        $('#back_circle').width($('#back_circle').height());
         document.getElementById("news_div_animation").style.paddingTop = "0%";
         document.getElementById("news_div_animation").style.opacity = "100%";
         let scrollDiv = document.getElementById("news_scroll")
@@ -258,8 +260,8 @@ export const NewsPageOne = (props) => {
             <Social />
             <div style={{height:"4px", backgroundColor:"#ffca18", zIndex:"100", left:'0%', top:"0%"}} id="news_scroll" className="position-fixed"></div>
             <div id="button_top" onClick={(e)=>{animationFinish(e,`/novosti/`)}} style={{right:"4%", top: "6%", zIndex:'6', opacity:'0%'}} className="position-fixed d-flex align-items-center">
-                <div id="back_style" style={{right:"10%"}}>{(localStorage.getItem('language') === 'ru') ? ('Назад') : ("Back")}</div>
-                <div id="back_circle" className="position-relative back_circle">
+                <div id="back_style"><span>{(localStorage.getItem('language') === 'ru') ? ('Назад') : ("Back")}</span></div>
+                <div id="back_circle" className="back_circle">
                     <div className="back_circle_border_back"></div>
                     <div id="back_circle_border_bottom" className="back_circle_border back_circle_border_bottom"></div>
                     <div id="back_circle_border_bottom1" className="back_circle_border back_circle_border_bottom1"></div>
