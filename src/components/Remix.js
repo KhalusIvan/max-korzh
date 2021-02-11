@@ -26,17 +26,17 @@ export const Remix = (props) => {
             scrollDiv.style.width = percent + "%";
             var st = e.target.scrollTop;
             if (st > lastScrollTop){
-                for (var i=0, child; child=lis[i]; i++) {
+                for (let i=0, child; child=lis[i]; i++) {
                     child.style.transform="rotate(3deg)"
                }
             } else {
-                for (var i=0, child; child=lis[i]; i++) {
+                for (let i=0, child; child=lis[i]; i++) {
                     child.style.transform="rotate(-3deg)"
                }
             }
             lastScrollTop = st;
             setTimeout(()=> {
-                for (var i=0, child; child=lis[i]; i++) {
+                for (let i=0, child; child=lis[i]; i++) {
                     child.style.transform="rotate(0deg)"
                }
             },200)
