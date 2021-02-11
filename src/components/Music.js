@@ -18,7 +18,7 @@ export const Music = (props) => {
             },3500)
         }
         document.getElementById("music_list").style.paddingTop = "0px";
-        document.getElementById("music_list").style.opacity = "100%";
+        document.getElementById("music_list").style.opacity = "1";
         let lis = document.getElementById("music_list").children
         let scrollDiv = document.getElementById("music_scroll")
         let musicDiv = document.getElementById("music_div")

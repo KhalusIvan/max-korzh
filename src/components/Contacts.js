@@ -19,8 +19,8 @@ export const Contacts = (props) => {
         }
         document.getElementById("contacts_right").style.paddingTop = "0px";
         document.getElementById("contacts_left").style.paddingTop = "0px";
-        document.getElementById("contacts_left").style.opacity = "100%";
-        document.getElementById("contacts_right").style.opacity = "100%";
+        document.getElementById("contacts_left").style.opacity = "1";
+        document.getElementById("contacts_right").style.opacity = "1";
     }, [])
     window.addEventListener('resize', ()=> {
         $('#rotated_animator').height($('#rotated_animator').width());

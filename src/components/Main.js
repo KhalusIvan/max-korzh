@@ -32,7 +32,7 @@ export const Main = () => {
             $('#cursor_circle').css("opacity","0%")
         });
         $(document).mouseenter(function () {
-            $('#cursor_circle').css("opacity","100%")
+            $('#cursor_circle').css("opacity","1")
         });
         setTimeout(()=> {
             setTimeout(()=>{

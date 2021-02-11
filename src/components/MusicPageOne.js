@@ -61,7 +61,7 @@ export const MusicPageOne = (props) => {
             },3500)
         }
         document.getElementById("one_music_player").style.paddingTop = "0px";
-        document.getElementById("one_music_player").style.opacity = "100%";
+        document.getElementById("one_music_player").style.opacity = "1";
         $('#button_top').height($('#button_top').width()/ 8 * 3);
         $('#back_circle').width($('#back_circle').height());
     }, [])
@@ -79,7 +79,7 @@ export const MusicPageOne = (props) => {
         setTimeout(()=>{
             document.getElementById('navigation').style.display = "none"
             document.getElementById('navigation_full_size').style.display = "none"
-            document.getElementById('button_top').style.opacity="100%"
+            document.getElementById('button_top').style.opacity="1"
         },200)
     })
     /*window.addEventListener('mousemove',(e)=> {

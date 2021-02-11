@@ -66,7 +66,7 @@ export const Navigation = (props) => {
             document.getElementById("myVideo").style.zIndex="6"
             setTimeout(()=>{
                 document.getElementById("navigation_full_size").style.top = "0%";
-                document.getElementById("navigation_full_size").style.opacity = "100%";
+                document.getElementById("navigation_full_size").style.opacity = "1";
             },100)
             
         } else {

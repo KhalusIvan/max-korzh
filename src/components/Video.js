@@ -12,7 +12,7 @@ export const Video = (props) => {
             },3500)
         }
         document.getElementById("main_textBlock").style.paddingTop = "0px";
-        document.getElementById("main_textBlock").style.opacity = "100%";
+        document.getElementById("main_textBlock").style.opacity = "1";
     }, [])
     return (
         <div style={{left:'12.5%', top:"0%", zIndex:"3"}} className="position-fixed h-100 w-75">

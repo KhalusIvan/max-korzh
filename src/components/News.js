@@ -22,7 +22,7 @@ export const News = (props) => {
         }   
         
         document.getElementById("news_div_animation").style.paddingTop = "0px";
-        document.getElementById("news_div_animation").style.opacity = "100%";
+        document.getElementById("news_div_animation").style.opacity = "1";
         let scrollDiv = document.getElementById("news_scroll")
         document.getElementById("news_div").addEventListener("scroll", (e)=>{
             clearTimeout();

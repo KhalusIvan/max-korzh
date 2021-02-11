@@ -14,7 +14,7 @@ export const Remix = (props) => {
             },3500)
         }
         document.getElementById("remix_list").style.paddingTop = "0px";
-        document.getElementById("remix_list").style.opacity = "100%";
+        document.getElementById("remix_list").style.opacity = "1";
         let lis = document.getElementById("remix_list").children
         let scrollDiv = document.getElementById("remix_scroll")
         document.getElementById("remix_div").addEventListener("scroll", (e)=>{

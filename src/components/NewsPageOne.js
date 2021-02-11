@@ -156,12 +156,12 @@ export const NewsPageOne = (props) => {
             },3500)
         }   
         setTimeout(()=>{
-            document.getElementById('button_top').style.opacity="100%"
+            document.getElementById('button_top').style.opacity="1"
         },200)
         $('#button_top').height($('#button_top').width()/ 8 * 3);
         $('#back_circle').width($('#back_circle').height());
         document.getElementById("news_div_animation").style.paddingTop = "0%";
-        document.getElementById("news_div_animation").style.opacity = "100%";
+        document.getElementById("news_div_animation").style.opacity = "1";
         let scrollDiv = document.getElementById("news_scroll")
         document.getElementById("news_div").addEventListener("scroll", (e)=>{
             clearTimeout();

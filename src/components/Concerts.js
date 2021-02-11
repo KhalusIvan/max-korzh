@@ -19,7 +19,7 @@ export const Concerts = (props) => {
             },3500)
         }   
         document.getElementById("concert_list").style.paddingTop = "0px";
-        document.getElementById("concert_list").style.opacity = "100%";
+        document.getElementById("concert_list").style.opacity = "1";
         let lis = document.getElementById("concert_list").children
         let scrollDiv = document.getElementById("concert_scroll")
         document.getElementById("concert_div").addEventListener("scroll", (e)=>{

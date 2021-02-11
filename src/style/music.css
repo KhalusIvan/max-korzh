@@ -255,7 +255,7 @@ img {
         width:15%;
     }
     .music_text {
-        opacity: 100%;
+        opacity: 1;
         width: 70%;
         font-size: 80px;
         line-height: 80px;
@@ -297,7 +297,7 @@ img {
         width:22%;
     }
     .music_text {
-        opacity: 100%;
+        opacity: 1;
         width: 78%;
         font-size: 80px;
         line-height: 80px;
@@ -339,7 +339,7 @@ img {
         width:33%;
     }
     .music_text {
-        opacity: 100%;
+        opacity: 1;
         width: 85%;
         font-size: 60px;
         line-height: 60px;
@@ -381,7 +381,7 @@ img {
         width:40%;
     }
     .music_text {
-        opacity: 100%;
+        opacity: 1;
         width: 90%;
         font-size: 2.8rem;
         line-height: 3rem;

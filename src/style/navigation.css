@@ -41,6 +41,7 @@
     -webkit-transform-origin: center right;
     transform-origin: center right;
     -webkit-transition:opacity 0.8s, transform 0.6s;
+    transition:opacity 0.8s, transform 0.6s;
 }
 
 .menu_label span {
@@ -54,6 +55,7 @@
 
 .menu_label_close{
     -webkit-transform: translate(0%, -50%) rotate(-25deg);
+    transform: translate(0%, -50%) rotate(-25deg);
     -webkit-transform-origin: center right;
     transform-origin: center right;
     opacity: 0%;
@@ -61,14 +63,18 @@
 
 .animate + .menu_label + .menu_label_close {
     -webkit-transform: translate(0%, -50%) rotate(0deg);
-    opacity: 100%;
+    transform: translate(0%, -50%) rotate(0deg);
+    opacity: 1;
     -webkit-transition:opacity 0.8s, transform 0.6s;
+    transition:opacity 0.8s, transform 0.6s;
 }
 
 .animate + .menu_label {
     -webkit-transform: rotate(25deg);
+    transform: rotate(25deg);
     opacity: 0%;
     -webkit-transition:opacity 0.8s, transform 0.6s;
+    transition:opacity 0.8s, transform 0.6s;
 }
 
 #menu_circle {

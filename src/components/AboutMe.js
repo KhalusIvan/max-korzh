@@ -12,7 +12,7 @@ export const AboutMe = (props) => {
             },3500)
         }
         document.getElementById("about_me_textBlock").style.paddingTop = "0px";
-        document.getElementById("about_me_textBlock").style.opacity = "100%";
+        document.getElementById("about_me_textBlock").style.opacity = "1";
         let scrollDiv = document.getElementById("concert_scroll")
         let clientH = document.getElementById("about_me").clientHeight;
         let scrollH = document.getElementById("about_me").scrollHeight;
