@@ -29,6 +29,7 @@ img {
     -webkit-transform-origin: center right;
     transform-origin: center right;
     -webkit-transition:opacity 0.8s, transform 0.6s;
+    transition:opacity 0.8s, transform 0.6s;
 }
 
 #back_style span {
