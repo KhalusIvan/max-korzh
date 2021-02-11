@@ -147,6 +147,10 @@ export const NewsPageOne = (props) => {
         $('#back_circle').width(window.innerHeight/15)
         document.getElementById('navigation').style.opacity = "0%"
         document.getElementById('navigation_full_size').style.opacity = "0%"
+        setTimeout(()=>{
+            document.getElementById('navigation').style.display = "none"
+            document.getElementById('navigation_full_size').style.display = "none"
+        },200)
         document.getElementById("news_div_animation").style.transition = "opacity 1.5s ease 0.2s, padding-top 1.5s ease 0.2s";
         if(props.isFirstLoad) {
             document.getElementById("news_div_animation").style.transition = "opacity 1.5s ease 3.5s, padding-top 1.5s ease 3.5s";
@@ -192,6 +196,16 @@ export const NewsPageOne = (props) => {
                 }
             }
         }
+        document.getElementById('button_top').addEventListener("mouseenter", ()=> {
+            $('#cursor_circle').height(window.innerHeight / 100);
+            $('#cursor_circle').width(window.innerHeight / 100);
+            $('#cursor_circle').css("background-color", "white");    
+        })
+        document.getElementById('button_top').addEventListener("mouseleave", ()=> {
+            $('#cursor_circle').height(window.innerHeight / 20);
+            $('#cursor_circle').width(window.innerHeight / 20);
+            $('#cursor_circle').css("background-color", "transparent");
+        })
         for(let i = 0; i < one_news_li_photo_img.length; i++) {
             one_news_li_photo_img[i].addEventListener("mouseenter", ()=> {
                 $('#cursor_circle').height(window.innerHeight / 100);
@@ -251,7 +265,9 @@ export const NewsPageOne = (props) => {
         },1000)
         setTimeout(()=> {
             document.getElementById('navigation').style.removeProperty('opacity')
+            document.getElementById('navigation').style.removeProperty('display')
             document.getElementById('navigation_full_size').style.removeProperty('opacity')
+            document.getElementById('navigation_full_size').style.removeProperty('display')
             history.push(where)
         },400)
     }

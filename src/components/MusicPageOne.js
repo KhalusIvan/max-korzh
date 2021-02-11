@@ -64,6 +64,16 @@ export const MusicPageOne = (props) => {
         document.getElementById("one_music_player").style.opacity = "1";
         $('#button_top').height($('#button_top').width()/ 8 * 3);
         $('#back_circle').width($('#back_circle').height());
+        document.getElementById('button_top').addEventListener("mouseenter", ()=> {
+            $('#cursor_circle').height(window.innerHeight / 100);
+            $('#cursor_circle').width(window.innerHeight / 100);
+            $('#cursor_circle').css("background-color", "white");    
+        })
+        document.getElementById('button_top').addEventListener("mouseleave", ()=> {
+            $('#cursor_circle').height(window.innerHeight / 20);
+            $('#cursor_circle').width(window.innerHeight / 20);
+            $('#cursor_circle').css("background-color", "transparent");
+        })
     }, [])
     useEffect(()=>{
         let dot = document.getElementById('one_music_player_bar_dot')

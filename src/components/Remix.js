@@ -26,23 +26,23 @@ export const Remix = (props) => {
             scrollDiv.style.width = percent + "%";
             var st = e.target.scrollTop;
             if (st > lastScrollTop){
-                for (let i=0, child; child=lis[i]; i++) {
+                for (let i=0, child=lis[0]; i<lis.length; child=lis[i], i++) {
                     child.style.transform="rotate(3deg)"
                }
             } else {
-                for (let i=0, child; child=lis[i]; i++) {
+                for (let i=0, child=lis[0]; i<lis.length; child=lis[i], i++) {
                     child.style.transform="rotate(-3deg)"
                }
             }
             lastScrollTop = st;
             setTimeout(()=> {
-                for (let i=0, child; child=lis[i]; i++) {
+                for (let i=0, child=lis[0]; i<lis.length; child=lis[i], i++) {
                     child.style.transform="rotate(0deg)"
                }
             },200)
         })
         
-        for (var i=0, child; child=lis[i]; i++) {
+        for (let i=0, child=lis[0]; i<lis.length; child=lis[i], i++) {
             let child1 = child.children;
             for(var j=0, child_1; child_1=child1[j]; j++) {
                 child_1.addEventListener("mouseenter", ()=> {
@@ -185,7 +185,7 @@ export const Remix = (props) => {
     ];
     let RemixList = remixs.map(remix => {
         return <li className="remix_li" key={remix.href}>
-            <a className="d-inline-block" href={remix.href} target="_blank">
+            <a className="d-inline-block" href={remix.href} rel="noreferrer" target="_blank">
                 <div className="remix_load">{(localStorage.getItem('language') === 'ru') ? ('Нажмите чтобы скачать') : ("Click to download")}</div>
                 <div style={{textTransform:'uppercase'}} className="remix_name">{remix.name}</div>
             </a>

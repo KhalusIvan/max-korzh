@@ -174,7 +174,7 @@ export const Concerts = (props) => {
                                     <img style={{transform:"translate(-100%,0%)"}} id="logo_img" alt="logo" src={logo} className="position-absolute" />
                                 </div>
                                 <button id="button_back" type="button" data-dismiss="modal" aria-label="Close" style={{paddingRight:"3%", width:"60%"}} className="d-flex align-items-center justify-content-end">
-                                    <div id="back_style">
+                                    <div id="back_style_popup">
                                         {
                                             (localStorage.getItem('language') === 'ru') ? (
                                                 "Назад к расписанию"
